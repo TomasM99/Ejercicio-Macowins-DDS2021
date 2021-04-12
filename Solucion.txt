@@ -15,6 +15,10 @@ class Prenda {
     method precioVenta(){
       return estado.modificarPrecio(precio);
     }
+    
+    method estado(){
+        return estado;
+    }
 }
 
 object nueva {
