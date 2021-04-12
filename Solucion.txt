@@ -1,1 +1,46 @@
 MACOWINS
+
+-IDENTIFICAR REQUERIMIENTOS
+Conocer precio de venta de una prenda.
+Conocer tipo de una prenda.
+Conocer las ganancias de un determinado dia.
+
+
+-SOLUCION EN OBJETOS
+
+class Prenda {
+    var precio;
+    var estado;
+    
+    method precioVenta(){
+      return estado.modificarPrecio(precio);
+    }
+}
+
+object nueva {
+  
+    method modificarPrecio(precio){
+      return precio;
+  }
+}
+
+object promocion {
+    var descuento;
+    
+    method modificarPrecio(precio) {
+      return precio - descuento;
+    }
+}
+
+object liquidacion {
+    
+    method modificarPrecio(precio) {
+      return precio * 0.5;
+    }
+}
+
+
+-EXPLICACION NECESARIA ADICIONAL
+
+
+-ALTERNATIVAS DESCARTADAS
