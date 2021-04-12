@@ -33,7 +33,7 @@ object nueva {
   }
 }
 
-object promocion {
+class Promocion {
     var descuento;
     
     method modificarPrecio(precio) {
@@ -80,6 +80,19 @@ class Tarjeta {
 
 
 -EXPLICACION NECESARIA ADICIONAL
+Como primera aclarion quiero decir que interprete que por cada dia se realiza esa sola venta, que contiene las ganancias de todo el dia,
+no que puede haber mas de una venta por dia. Si asi fuera habria que hacer modificaciones al codigo para que obtengamos todas las ventas
+de TAL dia y sean sumadas para obtener las ganancias del dia.
+En el caso de cantidad de prendas en la clase de ventas decidi ponerlo como un metodo ya que se puede calcular facilmente, pidiendo el largo
+de la lista de prendas en la venta, y no como atributo.
+Los estados nueva y liquidacion, y el medio de pago efectivo son objetos ya que todos son iguales y no cambian nunca, ahora bien tanto tarjeta como
+promocion son clases porque tienen atributos variables de los cuales dependen algunos metodos, y pueden ser diferentes.
+Como comentario final decidi realizar esta solucion ya que se aprovecha del polimorfismo, no acoplando los objetos y cada uno son su responsabilidad
+asignada.
 
 
 -ALTERNATIVAS DESCARTADAS
+Descarte el caso en que tanto los estados de las prendas como los medios de pagos no sean objetos. Por ejemplo si fueran strings
+tendriamos que hacer una cadena de if, cuando se puede solucionar mucho mejor usando polimorfismo y tratando a cada estado como un
+objeto para que tenga la responsabilidad de modificar el precio final en ambos casos. Ademas decidi no usar herencia en ningun caso,
+ya que con clases y WKO alcanza.
