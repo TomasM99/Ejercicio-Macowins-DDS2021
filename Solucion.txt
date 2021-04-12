@@ -11,6 +11,7 @@ Conocer las ganancias de un determinado dia.
 class Prenda {
     var precio;
     var estado;
+    var tipoDePrenda;
     
     method precioVenta(){
       return estado.modificarPrecio(precio);
@@ -18,6 +19,10 @@ class Prenda {
     
     method estado(){
         return estado;
+    }
+    
+    method tipoDePrenda(){
+        return tipoDePrenda;
     }
 }
 
@@ -40,6 +45,36 @@ object liquidacion {
     
     method modificarPrecio(precio) {
       return precio * 0.5;
+    }
+}
+
+class Venta {
+    var prendas = [];
+    var medioDePago;
+    var fecha;
+    
+    method cantidadDePrendasVendidas() {
+        return prendas.length();
+    }
+    
+    method gananciasDelDia(){
+        return medioDePago.calcularGananciaFinal(prendas.sum({prenda => prenda.precioVenta()}));
+    }
+}
+
+object efectivo {
+    
+    method calcularGananciaFinal(costoVenta){
+        return costoVenta;
+    }
+}
+
+class Tarjeta {
+    var cantCuotas;
+    var interes;
+    
+    method calcularGananciaFinal(costoVenta){
+        return costoVenta + (cantCuotas*interes + 0.01*costoVenta);
     }
 }
 
