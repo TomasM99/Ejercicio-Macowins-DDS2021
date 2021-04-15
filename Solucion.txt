@@ -97,3 +97,6 @@ Descarte el caso en que tanto los estados de las prendas como los medios de pago
 tendriamos que hacer una cadena de if, cuando se puede solucionar mucho mejor usando polimorfismo y tratando a cada estado como un
 objeto para que tenga la responsabilidad de modificar el precio final en ambos casos. Ademas decidi no usar herencia en ningun caso,
 ya que con clases y WKO alcanza.
+En el caso de los tipos de prenda se puede hacer tambien con ENUM, aunque con strings es poco mas simple si no tengo comportamiento
+que depende de eso, eso si, el string puede traer mas errores si la persona lo escribe mal. Depende mucho de como necesitamos el dato. Por
+ahora con un string alcanza.
