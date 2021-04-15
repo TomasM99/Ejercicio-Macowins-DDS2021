@@ -89,6 +89,7 @@ Los estados nueva y liquidacion, y el medio de pago efectivo son objetos ya que 
 promocion son clases porque tienen atributos variables de los cuales dependen algunos metodos, y pueden ser diferentes.
 Como comentario final decidi realizar esta solucion ya que se aprovecha del polimorfismo, no acoplando los objetos y cada uno son su responsabilidad
 asignada.
+Si queremos agregar una prenda ma de una vez a una venta tenemos que poner el objeto de esa prenda varias veces en la lista de prendas en venta.
 
 
 -ALTERNATIVAS DESCARTADAS
