@@ -78,6 +78,7 @@ class Tarjeta {
     }
 }
 
+*Agregar clase negocio para la solucion en java. Con esta clase completamos el requerimiento de filtrar las ventas por fecha.*
 
 -EXPLICACION NECESARIA ADICIONAL
 Como primera aclarion quiero decir que interprete que por cada dia se realiza esa sola venta, que contiene las ganancias de todo el dia,
