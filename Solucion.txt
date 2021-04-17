@@ -8,6 +8,19 @@ Conocer las ganancias de un determinado dia.
 
 -SOLUCION EN OBJETOS
 
+class Negocio {
+    var ventas = [];
+    
+    method gananciasDelDia(fecha){
+        return ventas.ventasDeUnDia(fecha).sum({venta -> venta.precioDeVenta()});
+    }
+    
+    method ventasDeUnDia(fecha){
+        return ventas.filter({venta -> venta.fecha() = fecha});
+    }
+    
+}
+
 class Prenda {
     var precio;
     var estado;
@@ -57,14 +70,18 @@ class Venta {
         return prendas.length();
     }
     
-    method gananciasDelDia(){
-        return medioDePago.calcularGananciaFinal(prendas.sum({prenda => prenda.precioVenta()}));
+    method precioDeVenta(){
+        return medioDePago.calcularCostoFinal(prendas.sum({prenda => prenda.precioVenta()}));
+    }
+    
+    method fecha(){
+        return fecha;
     }
 }
 
 object efectivo {
     
-    method calcularGananciaFinal(costoVenta){
+    method calcularCostoFinal(costoVenta){
         return costoVenta;
     }
 }
@@ -73,12 +90,11 @@ class Tarjeta {
     var cantCuotas;
     var interes;
     
-    method calcularGananciaFinal(costoVenta){
+    method calcularCostoFinal(costoVenta){
         return costoVenta + (cantCuotas*interes + 0.01*costoVenta);
     }
 }
 
-*Agregar clase negocio para la solucion en java. Con esta clase completamos el requerimiento de filtrar las ventas por fecha.*
 
 -EXPLICACION NECESARIA ADICIONAL
 Como primera aclarion quiero decir que interprete que por cada dia se realiza esa sola venta, que contiene las ganancias de todo el dia,
