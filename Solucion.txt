@@ -3,6 +3,7 @@ MACOWINS
 -IDENTIFICAR REQUERIMIENTOS
 Conocer precio de venta de una prenda.
 Conocer tipo de una prenda.
+Registrar una venta.
 Conocer las ganancias de un determinado dia.
 
 
